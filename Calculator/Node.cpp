@@ -5,6 +5,6 @@
 template<class T>
 Node<T>::Node(T& value)
 {
-	m_value = &value;
-	m_next = nullptr;
+	this->m_value = &value;
+	this->m_next = nullptr;
 }

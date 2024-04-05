@@ -127,15 +127,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Calculator.cpp" />
-    <ClCompile Include="Convertor.cpp" />
+    <ClCompile Include="BigData.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Operator.cpp" />
+    <ClCompile Include="Operators.cpp" />
+    <ClCompile Include="Operator_Add.cpp" />
+    <ClCompile Include="Operator_CloseBracket.cpp" />
+    <ClCompile Include="Operator_Divide.cpp" />
+    <ClCompile Include="Operator_Multiply.cpp" />
+    <ClCompile Include="Operator_OpenBracket.cpp" />
+    <ClCompile Include="Operator_Subtruct.cpp" />
     <ClCompile Include="RPN_calculator.cpp" />
+    <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="StackValues.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Convertor.h" />
+    <ClInclude Include="BigData.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Operator.h" />
+    <ClInclude Include="Operators.h" />
+    <ClInclude Include="Operator_Add.h" />
+    <ClInclude Include="Operator_CloseBracket.h" />
+    <ClInclude Include="Operator_Divide.h" />
+    <ClInclude Include="Operator_Multiply.h" />
+    <ClInclude Include="Operator_OpenBracket.h" />
+    <ClInclude Include="Operator_Subtruct.h" />
     <ClInclude Include="RPN_calculator.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StackValues.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
