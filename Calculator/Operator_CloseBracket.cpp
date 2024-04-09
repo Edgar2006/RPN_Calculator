@@ -1,16 +1,28 @@
+#include "Operator_OpenBracket.h"
+
 #include "Operator_CloseBracket.h"
 
 
 
-template<class T>
-void Operator_CloseBracket<T>::calculate(Stack<T>& stackNumbers)
+void Operator_CloseBracket::calculate(LinkedStack<BigData>& stackNumbers)
 {
 	// need logic
 }
 
-template<class T>
-Operator_CloseBracket<T>::Operator_CloseBracket()
+
+Operator_CloseBracket::Operator_CloseBracket():Operator::Operator(")",3)
 {
-	this->m_operatorName = ")";
-	this->m_priority = 3;
+}
+
+
+void Operator_CloseBracket::addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperator)
+{
+	Operator iterator = stackOperator.top();
+	Operator_OpenBracket operator_OpenBracket;
+	while(iterator.m_priority != operator_OpenBracket.m_priority)
+	{
+		iterator.calculate(stackNumbers);
+		stackNumbers.pop_back();
+		iterator = stackOperator.top();
+	}
 }

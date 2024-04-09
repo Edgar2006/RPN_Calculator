@@ -1,15 +1,16 @@
 #include "Operator_OpenBracket.h"
 
 
-template<class T>
-void Operator_OpenBracket<T>::calculate(Stack<T>& stackNumbers)
+void Operator_OpenBracket::calculate(LinkedStack<BigData>& stackNumbers)
 {
 	// need logic
 }
 
-template<class T>
-Operator_OpenBracket<T>::Operator_OpenBracket()
+Operator_OpenBracket::Operator_OpenBracket() : Operator::Operator("(",-1)
 {
-	this->m_operatorName = "(";
-	this->m_priority = 3;
+}
+
+void Operator_OpenBracket::addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperator)
+{
+
 }

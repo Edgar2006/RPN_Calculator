@@ -1,5 +1,6 @@
-#ifndef THIS_HEADER_H // Use a unique identifier for every file.
-#define THIS_HEADER_H
+#pragma once
+#include <iostream>
+
 template<class T>
 
 class Node
@@ -12,4 +13,3 @@ public:
 
 };
 
-#endif

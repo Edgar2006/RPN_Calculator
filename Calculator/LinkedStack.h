@@ -1,13 +1,19 @@
 #pragma once
+#include <iostream>
+
 #include "Node.h"
+
+#include "Node.cpp"
+
+
 template<class T>
 
 
-class Stack
+class LinkedStack
 {
 public:
-	Stack();
-	~Stack();
+	LinkedStack();
+	~LinkedStack();
 	void push_back(T& value);
 	void getSize();
 	void pop_back();

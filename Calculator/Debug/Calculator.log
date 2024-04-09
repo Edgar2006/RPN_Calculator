@@ -1,0 +1,72 @@
+﻿  BigData.cpp
+  Main.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\Main.cpp(11,15): error C2558: class 'BigData': no copy constructor available or copy constructor is declared 'explicit'
+  Node.cpp
+  Operator.cpp
+  Operators.cpp
+  Operator_Add.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(8,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(8,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(10,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(10,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(15,14): error C2440: 'initializing': cannot convert from 'BigData' to 'BigData'
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Add.cpp(15,14): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+  Operator_CloseBracket.cpp
+  Operator_Divide.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(6,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(6,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(8,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(8,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(13,14): error C2440: 'initializing': cannot convert from 'BigData' to 'BigData'
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Divide.cpp(13,14): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+  Operator_Multiply.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(6,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(6,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(8,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(8,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(13,14): error C2440: 'initializing': cannot convert from 'BigData' to 'BigData'
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Multiply.cpp(13,14): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+  Operator_OpenBracket.cpp
+  Operator_Subtruct.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(7,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(7,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(9,17): error C2440: 'initializing': cannot convert from 'T' to 'BigData'
+          with
+          [
+              T=BigData
+          ]
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(9,17): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(14,14): error C2440: 'initializing': cannot convert from 'BigData' to 'BigData'
+C:\Users\505da\Desktop\Calculator\Calculator\Operator_Subtruct.cpp(14,14): message : Cannot copy construct class 'BigData' due to ambiguous copy constructors or no available copy constructor
+  RPN_calculator.cpp
+C:\Users\505da\Desktop\Calculator\Calculator\RPN_calculator.cpp(38,19): warning C4018: '<': signed/unsigned mismatch
+  LinkedStack.cpp
+  Generating Code...

@@ -1,16 +1,21 @@
 #include "Operator_Divide.h"
 
 
-template<class T>
-void Operator_Divide<T>::calculate(Stack<T>& stackNumbers)
+void Operator_Divide::calculate(LinkedStack<BigData>& stackNumbers)
 {
-	StackValues<T> stackValues = get2Values(stackNumbers);
-	stackNumbers.push_back(stackValues.value1 / stackValues.value2);
+	BigData value1 = stackNumbers.top();
+	stackNumbers.pop_back();
+	BigData value2 = stackNumbers.top();
+	stackNumbers.pop_back();
+
+
+
+	BigData sum = value1 / value2;
+
+	stackNumbers.push_back(sum);
 }
 
-template<class T>
-Operator_Divide<T>::Operator_Divide()
+Operator_Divide::Operator_Divide() : Operator::Operator("/",2)
 {
-	this->m_operatorName = "/";
-	this->m_priority = 2;
+
 }

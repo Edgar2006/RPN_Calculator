@@ -1,15 +1,21 @@
 #pragma once
+#include <iostream>
+
 class BigData
 {
 
 
 public:
-	BigData(long double m_value);
-	BigData(int m_value);
-
+	BigData(int value);
+	BigData();
+	BigData(const BigData& value2);
+	BigData operator +(BigData& value2);
+	BigData operator -(BigData& value2);
+	BigData operator *(BigData& value2);
+	BigData operator /(BigData& value2);
 
 public:
-	long double m_value;
+	int m_value;
 
 };
 

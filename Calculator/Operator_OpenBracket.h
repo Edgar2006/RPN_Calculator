@@ -2,12 +2,12 @@
 #include "Operator.h"
 
 
-template<class T>
 
-class Operator_OpenBracket : public Operator<T>
+class Operator_OpenBracket : public Operator
 {
 public:
-	void calculate(Stack<T>& stack)override;
+	void calculate(LinkedStack<BigData>& stack)override;
 	Operator_OpenBracket();
+	void addToStack(LinkedStack<BigData>& stackNumbers,LinkedStack<Operator>& stackOperator);
 };
 

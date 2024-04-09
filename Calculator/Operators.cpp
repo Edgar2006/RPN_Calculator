@@ -12,17 +12,16 @@
 
 
 
-template<class T>
-Operators<T>::Operators()
+Operators::Operators()
 {
 
 
-	Operator_Add<T> add;
-	Operator_Subtruct<T> subtruct;
-	Operator_Multiply<T> multiply;	
-	Operator_Divide<T> divide;	
-	Operator_OpenBracket<T> openBracket;
-	Operator_CloseBracket<T> closeBracket;
+	Operator_Add add;
+	Operator_Subtruct subtruct;
+	Operator_Multiply multiply;	
+	Operator_Divide divide;	
+	Operator_OpenBracket openBracket;
+	Operator_CloseBracket closeBracket;
 	this->m_operatorArray.push_back(add);
 	this->m_operatorArray.push_back(subtruct);
 	this->m_operatorArray.push_back(multiply);
@@ -33,14 +32,33 @@ Operators<T>::Operators()
 
 }
 
-template<class T>
-void Operators<T>::calculate(const std::string& token, Stack<T>& m_stackNumbers, Stack<T>& m_stackOperators)
+void Operators::calculate(const std::string & token, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators)
 {
-	for(Operator<T>& iterator : this->m_operatorArray)
+	for(Operator & iterator : this->m_operatorArray)
 	{
 		if(iterator.m_operatorName == token)
 		{
+			if(!stackOperators.isEmpty() && iterator.m_priority < stackOperators.top().m_priority)
+			{
+				iterator.addToStack(stackNumbers, stackOperators);
+			}
+			else
+			{
+				stackOperators.push_back(iterator);
+			}
+			break;
 		}
+	}
+}
+void Operators::calculate(Operator m_operator, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators)
+{
+	if(m_operator.m_priority < stackOperators.top().m_priority)
+	{
+		m_operator.addToStack(stackNumbers, stackOperators);
+	}
+	else
+	{
+		stackOperators.push_back(m_operator);
 	}
 }
 

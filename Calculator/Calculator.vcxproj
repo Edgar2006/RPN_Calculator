@@ -139,8 +139,7 @@
     <ClCompile Include="Operator_OpenBracket.cpp" />
     <ClCompile Include="Operator_Subtruct.cpp" />
     <ClCompile Include="RPN_calculator.cpp" />
-    <ClCompile Include="Stack.cpp" />
-    <ClCompile Include="StackValues.cpp" />
+    <ClCompile Include="LinkedStack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BigData.h" />
@@ -154,8 +153,7 @@
     <ClInclude Include="Operator_OpenBracket.h" />
     <ClInclude Include="Operator_Subtruct.h" />
     <ClInclude Include="RPN_calculator.h" />
-    <ClInclude Include="Stack.h" />
-    <ClInclude Include="StackValues.h" />
+    <ClInclude Include="LinkedStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

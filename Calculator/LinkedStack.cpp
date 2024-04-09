@@ -1,13 +1,10 @@
-#include "Stack.h"
-#include "Node.h"
-#include "Node.cpp"
+#include "LinkedStack.h"
 
-#include "iostream"
 
 
 template<class T>
 
-Stack<T>::Stack()
+LinkedStack<T>::LinkedStack()
 {
 	m_start = nullptr;
 	m_end = nullptr;
@@ -15,7 +12,7 @@ Stack<T>::Stack()
 }
 
 template<class T>
-Stack<T>::~Stack()
+LinkedStack<T>::~LinkedStack()
 {
 	Node<T>* item = m_start;
 	Node<T>* temp = nullptr;
@@ -25,11 +22,11 @@ Stack<T>::~Stack()
 		delete item;
 		item = temp;
 	}
-	std::cout<<"rm" << std::endl;
 }
 
+
 template<class T>
-void Stack<T>::push_back(T& value)
+void LinkedStack<T>::push_back(T& value)
 {
 	Node<T>* newElement = new Node<T>(value);
 	if (m_start == nullptr)
@@ -48,16 +45,18 @@ void Stack<T>::push_back(T& value)
 
 
 
+
+
 template<class T>
-void Stack<T>::getSize()
+void LinkedStack<T>::getSize()
 {
 	std::cout << m_size << std::endl;
 }
 
 template<class T>
-void Stack<T>::pop_back()
+void LinkedStack<T>::pop_back()
 {
-	Node* item = m_start;
+	Node<T>* item = m_start;
 	if (item != nullptr) 
 	{
 		while (item->m_next != nullptr)
@@ -75,14 +74,14 @@ void Stack<T>::pop_back()
 }
 
 template<class T>
-T Stack<T>::top()
+T LinkedStack<T>::top()
 {
-	return m_end->m_value;
+	return *m_end->m_value;
 }	
 
 
 template<class T>
-bool Stack<T>::isEmpty()
+bool LinkedStack<T>::isEmpty()
 {
 	if (m_start == nullptr) 
 	{

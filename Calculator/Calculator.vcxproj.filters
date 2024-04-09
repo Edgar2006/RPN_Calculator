@@ -30,13 +30,10 @@
     <ClCompile Include="Operator_Add.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Stack.cpp">
+    <ClCompile Include="LinkedStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Node.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StackValues.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Operators.cpp">
@@ -71,13 +68,10 @@
     <ClInclude Include="Operator_Add.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
+    <ClInclude Include="LinkedStack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Node.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StackValues.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operators.h">

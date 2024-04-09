@@ -1,23 +1,14 @@
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <vector>
+#include "RPN_calculator.h"
 
 
 using namespace std;
 
 int main()
 {
-   string infix = "3 ^ 4 + ( 11 - ( 3 * 2 ) ) / 2";//our infix expression
-   istringstream iss(infix);
-   vector<string> tokens;//store the tokens here
-   while(iss)
-   {
-      string temp;
-      iss >>temp;
-      tokens.push_back(temp);
-      cout << temp << endl;
-   }
+   RPN_calculator a;
+  
+   string infix = "1 + 2 * ( 3 + 4 / 2 - ( 1 + 2 ) ) * 2 + 1";//our infix expression
+   std::cout << a.calculate(infix).m_value << endl;
 
-
+   return 0;
 }

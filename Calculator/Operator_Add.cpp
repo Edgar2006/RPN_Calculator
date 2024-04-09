@@ -1,18 +1,28 @@
 #include "Operator_Add.h"
-#include <iostream>
-#include <string>
 
 
-template<class T>
-void Operator_Add<T>::calculate(Stack<T>& stackNumbers)
+
+
+void Operator_Add::calculate(LinkedStack<BigData>& stackNumbers)
 {
-	StackValues<T> stackValues = get2Values(stackNumbers);
-	stackNumbers.push_back(stackValues.value1 + stackValues.value2);
+	BigData value1 = stackNumbers.top();
+	stackNumbers.pop_back();
+	BigData value2 = stackNumbers.top();
+	stackNumbers.pop_back();
+
+
+
+	BigData sum = value1 + value2;
+
+	stackNumbers.push_back(sum);
 }
 
-template<class T>
-Operator_Add<T>::Operator_Add()
+Operator_Add::Operator_Add():Operator::Operator("+",1)
 {
-	this->m_operatorName = "+";
-	this->m_priority = 1;
+
 }
+
+
+
+
+

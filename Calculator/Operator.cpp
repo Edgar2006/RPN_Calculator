@@ -2,23 +2,28 @@
 #include <string>
 
 
-template<class T>
 
-Operator<T>::Operator(const std::string& m_operatorName, const int& m_priority)
+Operator::Operator(const std::string& m_operatorName, const int& m_priority)
 {
 	this->m_operatorName = m_operatorName;
 	this->m_priority = m_priority;
 }
 
-template<class T>
-StackValues<T> Operator<T>::get2Values(Stack<T>& stackNumbers)
+
+void Operator::calculate(LinkedStack<BigData>& stackNumbers)
 {
-	StackValues<T> stackValues;
-	stackValues.value1 = stackNumbers.top();
-	stackNumbers.pop_back();
-	stackValues.value2 = stackNumbers.top();
-	stackNumbers.pop_back();
-	return stackValues;
+}
+
+void Operator::addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator> & stackOperator)
+{
+	Operator iterator = stackOperator.top();
+	while(iterator.m_priority >= this->m_priority)
+	{
+		iterator.calculate(stackNumbers);
+		stackNumbers.pop_back();
+		iterator = stackOperator.top();
+	}
+	stackOperator.push_back(*this);
 }
 
 

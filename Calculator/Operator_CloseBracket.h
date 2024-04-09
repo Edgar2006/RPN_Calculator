@@ -3,12 +3,14 @@
 #include "Operator.h"
 
 
-template<class T>
 
-class Operator_CloseBracket : public Operator<T>
+
+class Operator_CloseBracket : public Operator
 {
 public:
-	void calculate(Stack<T>& stack)override;
+	void calculate(LinkedStack<BigData>& stack)override;
 	Operator_CloseBracket();
+	void addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperator);
+
 };
 

@@ -1,6 +1,6 @@
 #include "Node.h"
-#include "iostream"
 
+#include <iostream>
 
 template<class T>
 Node<T>::Node(T& value)

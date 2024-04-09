@@ -1,23 +1,17 @@
 #include "RPN_calculator.h"
 
-#include <iostream>
-#include <string>
-
-#include <sstream>
-
-using std::istringstream;
 
 
-template<class T>
-void RPN_calculator<T>::useOperator(const std::string& token)
+
+void RPN_calculator::useOperator(const std::string& token)
 {
-   
+   m_operators.calculate(token,m_stackNumbers,m_stackOperators);
 }
 
-template<class T>
-std::string RPN_calculator<T>::getToken(const std::string& infixProblem)
+void RPN_calculator::getToken(const std::string& infixProblem)
 {
-   istringstream iss(infixProblem);
+   std::istringstream iss(infixProblem);
+
    while(iss)
    {
       std::string token;
@@ -26,6 +20,7 @@ std::string RPN_calculator<T>::getToken(const std::string& infixProblem)
       {
          // number stack
          convertTokenToNumber(token);
+
       }
       else
       {
@@ -33,10 +28,11 @@ std::string RPN_calculator<T>::getToken(const std::string& infixProblem)
          useOperator(token);
       }
    }
+
 }
 
-template<class T>
-bool RPN_calculator<T>::checkIfTokenNumber(const std::string& token)
+
+bool RPN_calculator::checkIfTokenNumber(const std::string token)
 {
    bool flag = true;
    for (int i=0; i<token.length(); i++)
@@ -50,15 +46,21 @@ bool RPN_calculator<T>::checkIfTokenNumber(const std::string& token)
    return flag;
 }
 
-template<class T>
-void RPN_calculator<T>::convertTokenToNumber(const std::string& token)
+
+void RPN_calculator::convertTokenToNumber(const std::string& token)
 {
-   int num = std::stoi(token);
-   m_stackNumbers.push_back();
+   BigData num(std::stoi(token));
+   m_stackNumbers.push_back(num);
 }
 
-template<class T>
-inline T* RPN_calculator<T>::calculate(const std::string & infixProblem)
+
+BigData RPN_calculator::calculate(const std::string & infixProblem)
 {
    getToken(infixProblem);
+
+   while (!m_stackOperators.isEmpty())
+   {
+      m_operators.calculate(m_stackOperators.top(), m_stackNumbers,m_stackOperators);
+   }
+   return m_stackNumbers.top().m_value;
 }
