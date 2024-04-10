@@ -12,8 +12,8 @@ private:
 
 public:
 	Operators();
-	void calculate(const std::string & token, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators);
-	void calculate(Operator m_operator, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators);
+	void calculate(const std::string & token, std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperators);
+	void calculate(Operator m_operator, std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperators);
 
 };
 

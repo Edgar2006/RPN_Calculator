@@ -32,25 +32,25 @@ Operators::Operators()
 
 }
 
-void Operators::calculate(const std::string & token, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators)
+void Operators::calculate(const std::string & token, std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperators)
 {
 	for(Operator & iterator : this->m_operatorArray)
 	{
 		if(iterator.m_operatorName == token)
 		{
-			if(!stackOperators.isEmpty() && iterator.m_priority < stackOperators.top().m_priority)
+			if(!stackOperators.empty() && iterator.m_priority < stackOperators.top().m_priority)
 			{
 				iterator.addToStack(stackNumbers, stackOperators);
 			}
 			else
 			{
-				stackOperators.push_back(iterator);
+				stackOperators.push(iterator);
 			}
 			break;
 		}
 	}
 }
-void Operators::calculate(Operator m_operator, LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperators)
+void Operators::calculate(Operator m_operator, std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperators)
 {
 	if(m_operator.m_priority < stackOperators.top().m_priority)
 	{
@@ -58,7 +58,7 @@ void Operators::calculate(Operator m_operator, LinkedStack<BigData>& stackNumber
 	}
 	else
 	{
-		stackOperators.push_back(m_operator);
+		stackOperators.push(m_operator);
 	}
 }
 

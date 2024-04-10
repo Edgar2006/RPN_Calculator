@@ -5,7 +5,7 @@
 class Operator_Multiply : public Operator
 {
 public:
-	void calculate(LinkedStack<BigData>& stackNumbers)override;
+	void calculate(std::stack<BigData>& stackNumbers)override;
 	Operator_Multiply();
 };
 

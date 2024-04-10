@@ -1,6 +1,5 @@
 #include "RPN_calculator.h"
 
-
 using namespace std;
 
 int main()

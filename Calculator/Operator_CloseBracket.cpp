@@ -4,7 +4,7 @@
 
 
 
-void Operator_CloseBracket::calculate(LinkedStack<BigData>& stackNumbers)
+void Operator_CloseBracket::calculate(std::stack<BigData>& stackNumbers)
 {
 	// need logic
 }
@@ -15,14 +15,14 @@ Operator_CloseBracket::Operator_CloseBracket():Operator::Operator(")",3)
 }
 
 
-void Operator_CloseBracket::addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator>& stackOperator)
+void Operator_CloseBracket::addToStack(std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperator)
 {
 	Operator iterator = stackOperator.top();
 	Operator_OpenBracket operator_OpenBracket;
 	while(iterator.m_priority != operator_OpenBracket.m_priority)
 	{
 		iterator.calculate(stackNumbers);
-		stackNumbers.pop_back();
+		stackNumbers.pop();
 		iterator = stackOperator.top();
 	}
 }

@@ -3,18 +3,18 @@
 
 
 
-void RPN_calculator::useOperator(const std::string& token)
+void RPN_calculator::useOperator(std::string token)
 {
    m_operators.calculate(token,m_stackNumbers,m_stackOperators);
 }
 
-void RPN_calculator::getToken(const std::string& infixProblem)
+void RPN_calculator::getToken(std::string infixProblem)
 {
    std::istringstream iss(infixProblem);
-
+   std::string token;
    while(iss)
    {
-      std::string token;
+
       iss >> token;
       if(checkIfTokenNumber(token))
       {
@@ -32,7 +32,7 @@ void RPN_calculator::getToken(const std::string& infixProblem)
 }
 
 
-bool RPN_calculator::checkIfTokenNumber(const std::string token)
+bool RPN_calculator::checkIfTokenNumber(std::string token)
 {
    bool flag = true;
    for (int i=0; i<token.length(); i++)
@@ -47,10 +47,11 @@ bool RPN_calculator::checkIfTokenNumber(const std::string token)
 }
 
 
-void RPN_calculator::convertTokenToNumber(const std::string& token)
+void RPN_calculator::convertTokenToNumber(std::string token)
 {
-   BigData num(std::stoi(token));
-   m_stackNumbers.push_back(num);
+   int value = std::stoi(token);
+   BigData num(value);
+   m_stackNumbers.push(num);
 }
 
 
@@ -58,7 +59,7 @@ BigData RPN_calculator::calculate(const std::string & infixProblem)
 {
    getToken(infixProblem);
 
-   while (!m_stackOperators.isEmpty())
+   while (!m_stackOperators.empty())
    {
       m_operators.calculate(m_stackOperators.top(), m_stackNumbers,m_stackOperators);
    }

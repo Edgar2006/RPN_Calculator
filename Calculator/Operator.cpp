@@ -1,5 +1,4 @@
 #include "Operator.h"
-#include <string>
 
 
 
@@ -10,20 +9,25 @@ Operator::Operator(const std::string& m_operatorName, const int& m_priority)
 }
 
 
-void Operator::calculate(LinkedStack<BigData>& stackNumbers)
+void Operator::calculate(std::stack<BigData>& stackNumbers)
 {
 }
 
-void Operator::addToStack(LinkedStack<BigData>& stackNumbers, LinkedStack<Operator> & stackOperator)
+void Operator::addToStack(std::stack<BigData>& stackNumbers, std::stack<Operator> & stackOperator)
 {
 	Operator iterator = stackOperator.top();
-	while(iterator.m_priority >= this->m_priority)
+	if(this->m_priority != -1)
 	{
-		iterator.calculate(stackNumbers);
-		stackNumbers.pop_back();
-		iterator = stackOperator.top();
+
+		while(iterator.m_priority >= this->m_priority)
+		{
+			iterator.calculate(stackNumbers);
+			stackNumbers.pop();
+			iterator = stackOperator.top();
+		}
+
 	}
-	stackOperator.push_back(*this);
+	stackOperator.push(*this);
 }
 
 

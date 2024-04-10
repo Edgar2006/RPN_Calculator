@@ -5,7 +5,7 @@
 class Operator_Subtruct : public Operator
 {
 public:
-	void calculate(LinkedStack<BigData>& stackNumbers)override;
+	void calculate(std::stack<BigData>& stackNumbers)override;
 	Operator_Subtruct();
 };
 

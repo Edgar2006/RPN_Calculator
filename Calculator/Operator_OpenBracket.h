@@ -6,8 +6,8 @@
 class Operator_OpenBracket : public Operator
 {
 public:
-	void calculate(LinkedStack<BigData>& stack)override;
+	void calculate(std::stack<BigData>& stack)override;
 	Operator_OpenBracket();
-	void addToStack(LinkedStack<BigData>& stackNumbers,LinkedStack<Operator>& stackOperator);
+	void addToStack(std::stack<BigData>& stackNumbers,std::stack<Operator>& stackOperator);
 };
 
