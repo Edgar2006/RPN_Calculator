@@ -1,6 +1,6 @@
 #include "BigData.h"
 
-BigData::BigData(int m_value)
+BigData::BigData(double m_value)
 {
 	this->m_value = m_value;
 }
@@ -36,7 +36,7 @@ BigData BigData::operator*(BigData& value2)
 
 BigData BigData::operator/(BigData& value2)
 {
-	BigData sum(this->m_value / value2.m_value);
+	BigData sum(this->m_value / (double) value2.m_value);
 	return sum;
 }
 

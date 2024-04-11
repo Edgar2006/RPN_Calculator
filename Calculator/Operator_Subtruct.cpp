@@ -11,7 +11,7 @@ void Operator_Subtruct::calculate(std::stack<BigData>& stackNumbers)
 
 
 
-	BigData sum = value1 - value2;
+	BigData sum = value2 - value1;
 
 	stackNumbers.push(sum);
 }

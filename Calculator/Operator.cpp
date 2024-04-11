@@ -12,15 +12,22 @@ Operator::Operator(const std::string& m_operatorName, const int& m_priority)
 
 void Operator::addToStack(std::stack<BigData>& stackNumbers, std::stack<Operator*> & stackOperator)
 {
-	//Operator* iterator = stackOperator.top();
+	Operator* iterator = stackOperator.top();
 	if(this->m_priority != -1)
 	{
 
-		while(stackOperator.top()->m_priority >= this->m_priority)
+		while(iterator->m_priority >= this->m_priority)
 		{
-			stackOperator.top()->calculate(stackNumbers);
+			iterator->calculate(stackNumbers);
 			stackOperator.pop();
-			//iterator = stackOperator.top();
+			if(!stackOperator.empty())
+			{
+				iterator = stackOperator.top();
+			}
+			else
+			{
+				break;
+			}
 		}
 
 	}

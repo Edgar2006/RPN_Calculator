@@ -7,7 +7,10 @@ int main()
    RPN_calculator a;
   
    string infix = "1 + 2 * ( 3 + 4 / 2 - ( 1 + 2 ) ) * 2 + 1";//our infix expression
-   std::cout << a.calculate(infix).m_value << endl;
+   //std::cout << a.calculate(infix).m_value << endl;
 
+
+   infix = "25 * 3 + 12";//our infix expression
+   std::cout << a.calculate(infix).m_value << endl;
    return 0;
 }

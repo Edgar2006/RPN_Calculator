@@ -14,32 +14,18 @@ void RPN_calculator::getToken(std::string infixProblem)
    std::string token;
    while(iss)
    {
-
       iss >> token;
-      if(checkIfTokenNumber(token))
-      {
-         // number stack
-         convertTokenToNumber(token);
-
-      }
-      else
-      {
-
-         if(token == ")")
+      if(iss){
+         if(checkIfTokenNumber(token))
          {
-            useOperator(token);
+            // number stack
+            convertTokenToNumber(token);
 
          }
          else
          {
             useOperator(token);
          }
-
-
-
-
-         // operator stack
-         //useOperator(token);
       }
    }
 
@@ -63,7 +49,7 @@ bool RPN_calculator::checkIfTokenNumber(std::string token)
 
 void RPN_calculator::convertTokenToNumber(std::string token)
 {
-   int value = std::stoi(token);
+   double value = std::stoi(token);
    BigData num(value);
    m_stackNumbers.push(num);
 }
@@ -75,7 +61,9 @@ BigData RPN_calculator::calculate(const std::string & infixProblem)
 
    while (!m_stackOperators.empty())
    {
-      m_operators.calculate(m_stackOperators.top(), m_stackNumbers,m_stackOperators);
+      m_stackOperators.top()->calculate(m_stackNumbers);
+      m_stackOperators.pop();
+//      m_operators.calculate(m_stackNumbers,m_stackOperators);
    }
    return m_stackNumbers.top().m_value;
 }

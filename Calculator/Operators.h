@@ -13,7 +13,7 @@ private:
 public:
 	Operators();
 	void calculate(const std::string & token, std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperators);
-	void calculate(Operator* m_operator, std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperators);
+	void calculate(std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperators);
 
 };
 

@@ -32,7 +32,7 @@ void Operators::calculate(const std::string & token, std::stack<BigData>& stackN
 	{
 		if(iterator->m_operatorName == token)
 		{
-			if(!stackOperators.empty() && ( iterator->m_priority < stackOperators.top()->m_priority  || iterator->m_bigPriority ))
+			if( (iterator->m_priority != -1 && !stackOperators.empty()) && ( iterator->m_priority <= stackOperators.top()->m_priority  || iterator->m_bigPriority ))
 			{
 				iterator->addToStack(stackNumbers, stackOperators);
 			}
@@ -44,15 +44,8 @@ void Operators::calculate(const std::string & token, std::stack<BigData>& stackN
 		}
 	}
 }
-void Operators::calculate(Operator* m_operator, std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperators)
+void Operators::calculate(std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperators)
 {
-	if(m_operator->m_priority < stackOperators.top()->m_priority)
-	{
-		m_operator->addToStack(stackNumbers, stackOperators);
-	}
-	else
-	{
-		stackOperators.push(m_operator);
-	}
+	stackOperators.top()->addToStack(stackNumbers, stackOperators);
 }
 

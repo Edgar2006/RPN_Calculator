@@ -6,7 +6,7 @@ class BigData
 
 
 public:
-	BigData(int value);
+	BigData(double value);
 	BigData();
 	BigData(const BigData& value2);
 	BigData operator +(BigData& value2);
@@ -15,7 +15,7 @@ public:
 	BigData operator /(BigData& value2);
 
 public:
-	int m_value;
+	double m_value;
 
 };
 

@@ -11,7 +11,7 @@ Operator_OpenBracket::Operator_OpenBracket() : Operator::Operator("(",-1)
 	this->m_bigPriority = true;
 }
 
-void Operator_OpenBracket::addToStack(std::stack<BigData>& stackNumbers, std::stack<Operator>& stackOperator)
+void Operator_OpenBracket::addToStack(std::stack<BigData>& stackNumbers, std::stack<Operator*>& stackOperator)
 {
 
 }
