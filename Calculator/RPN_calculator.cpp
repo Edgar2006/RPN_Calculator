@@ -24,8 +24,22 @@ void RPN_calculator::getToken(std::string infixProblem)
       }
       else
       {
+
+         if(token == ")")
+         {
+            useOperator(token);
+
+         }
+         else
+         {
+            useOperator(token);
+         }
+
+
+
+
          // operator stack
-         useOperator(token);
+         //useOperator(token);
       }
    }
 

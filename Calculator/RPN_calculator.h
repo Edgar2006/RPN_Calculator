@@ -19,6 +19,6 @@ public:
 private:
 	Operators m_operators;
 	std::stack<BigData> m_stackNumbers;
-	std::stack<Operator> m_stackOperators;
+	std::stack<Operator*> m_stackOperators;
 };
 
