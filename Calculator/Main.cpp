@@ -1,4 +1,4 @@
-#include "RPN_calculator.h"
+﻿#include "RPN_calculator.h"
 
 using namespace std;
 
@@ -10,7 +10,7 @@ int main()
    //std::cout << a.calculate(infix).m_value << endl;
 
 
-   infix = "25 * 3 + 12";//our infix expression
+   infix = "( ( 9 * 4 ) - ( 6 / 2 ) ) + ( ( 18 / 7 ) * 2 )";//our infix expression    38.1428571429
    std::cout << a.calculate(infix).m_value << endl;
    return 0;
 }

@@ -18,9 +18,7 @@ void RPN_calculator::getToken(std::string infixProblem)
       if(iss){
          if(checkIfTokenNumber(token))
          {
-            // number stack
             convertTokenToNumber(token);
-
          }
          else
          {
