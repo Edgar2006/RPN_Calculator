@@ -51,6 +51,9 @@
     <ClCompile Include="Operator_CloseBracket.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Operator_Sqrt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RPN_calculator.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Operator_CloseBracket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operator_Sqrt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

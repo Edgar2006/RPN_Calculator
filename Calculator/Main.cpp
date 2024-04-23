@@ -13,7 +13,8 @@ int main()
    ////std::cout << a.calculate(infix).m_value << endl;
 
 
-   infix = "( 5 + 2 ) * 2 * 10000000000000000000000000000000000000000000000";//our infix expression    38.1428571429
+   infix = "( 20 + 2 ) * 2 * 10000000000000000000000000000000000000000000000";//our infix expression    38.1428571429
+   infix = "9 sqrt + 1";//our infix expression    38.1428571429
    a.calculate(infix).print();
 
 

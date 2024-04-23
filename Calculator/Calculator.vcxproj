@@ -137,6 +137,7 @@
     <ClCompile Include="Operator_Divide.cpp" />
     <ClCompile Include="Operator_Multiply.cpp" />
     <ClCompile Include="Operator_OpenBracket.cpp" />
+    <ClCompile Include="Operator_Sqrt.cpp" />
     <ClCompile Include="Operator_Subtruct.cpp" />
     <ClCompile Include="RPN_calculator.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="Operator_Divide.h" />
     <ClInclude Include="Operator_Multiply.h" />
     <ClInclude Include="Operator_OpenBracket.h" />
+    <ClInclude Include="Operator_Sqrt.h" />
     <ClInclude Include="Operator_Subtruct.h" />
     <ClInclude Include="RPN_calculator.h" />
   </ItemGroup>

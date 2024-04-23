@@ -5,6 +5,7 @@
 #include "Operator_Multiply.h"
 #include "Operator_OpenBracket.h"
 #include "Operator_CloseBracket.h"
+#include "Operator_Sqrt.h"
 
 
 
@@ -22,6 +23,7 @@ Operators::Operators()
 	this->m_operatorArray.push_back(new Operator_Divide);
 	this->m_operatorArray.push_back(new Operator_OpenBracket);
 	this->m_operatorArray.push_back(new Operator_CloseBracket);
+	this->m_operatorArray.push_back(new Operator_Sqrt);
 
 
 }
