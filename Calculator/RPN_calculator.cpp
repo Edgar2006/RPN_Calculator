@@ -47,9 +47,7 @@ bool RPN_calculator::checkIfTokenNumber(std::string token)
 
 void RPN_calculator::convertTokenToNumber(std::string token)
 {
-   double value = std::stoi(token);
-   BigData num(value);
-   m_stackNumbers.push(num);
+   m_stackNumbers.push(token);
 }
 
 
@@ -63,5 +61,5 @@ BigData RPN_calculator::calculate(const std::string & infixProblem)
       m_stackOperators.pop();
 //      m_operators.calculate(m_stackNumbers,m_stackOperators);
    }
-   return m_stackNumbers.top().m_value;
+   return m_stackNumbers.top();
 }
